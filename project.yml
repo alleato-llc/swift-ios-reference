@@ -1,0 +1,62 @@
+name: RecipePlanner
+options:
+  bundleIdPrefix: com.alleato
+  developmentLanguage: en
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "16.0"
+  minimumXcodeGenVersion: "2.42.0"
+
+packages:
+  RecipePlannerCore:
+    path: Packages/RecipePlannerCore
+  RecipePlannerServices:
+    path: Packages/RecipePlannerServices
+  RecipePlannerTestSupport:
+    path: Packages/RecipePlannerTestSupport
+
+targets:
+  RecipePlanner:
+    type: application
+    platform: iOS
+    sources:
+      - RecipePlanner
+    dependencies:
+      - package: RecipePlannerCore
+      - package: RecipePlannerServices
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.alleato.recipeplanner
+        SWIFT_VERSION: 6.0
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        INFOPLIST_KEY_CFBundleDisplayName: "Recipe Planner"
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+
+  RecipePlannerTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - RecipePlannerTests
+    dependencies:
+      - target: RecipePlanner
+      - package: RecipePlannerTestSupport
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.alleato.recipeplanner.tests
+        SWIFT_VERSION: 6.0
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  RecipePlanner:
+    build:
+      targets:
+        RecipePlanner: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - RecipePlannerTests

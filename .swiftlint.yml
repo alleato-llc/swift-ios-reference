@@ -1,0 +1,81 @@
+included:
+  - RecipePlanner
+  - RecipePlannerTests
+  - Packages
+
+excluded:
+  - .build
+  - DerivedData
+  - "**/.build"
+  - "**/DerivedData"
+
+disabled_rules:
+  # SwiftFormat handles these
+  - trailing_comma
+  - opening_brace
+  - statement_position
+  - comma
+  - colon
+  # Allow TODOs during development
+  - todo
+  # Allow nested types
+  - nesting
+
+opt_in_rules:
+  - empty_count
+  - empty_string
+  - first_where
+  - last_where
+  - sorted_first_last
+  - contains_over_first_not_nil
+  - fatal_error_message
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - private_outlet
+  - private_action
+  - redundant_nil_coalescing
+  - yoda_condition
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - literal_expression_end_indentation
+  - multiline_arguments
+  - multiline_parameters
+  - operator_usage_whitespace
+  - overridden_super_call
+  - unneeded_parentheses_in_closure_argument
+
+line_length:
+  warning: 150
+  error: 200
+  ignores_comments: true
+  ignores_urls: true
+  ignores_function_declarations: true
+
+file_length:
+  warning: 500
+  error: 1000
+
+type_body_length:
+  warning: 300
+  error: 500
+
+function_body_length:
+  warning: 60
+  error: 100
+
+identifier_name:
+  min_length:
+    warning: 1
+  excluded:
+    - id
+    - to
+    - at
+    - by
+    - x
+    - y
+    - i
+    - j
+    - ok
+
+reporter: xcode

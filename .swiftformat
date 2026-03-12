@@ -1,0 +1,18 @@
+# Swift version
+--swiftversion 6.0
+
+# Formatting rules
+--indent 4
+--indentcase false
+--trimwhitespace always
+--linebreaks lf
+--maxwidth 120
+--wraparguments before-first
+--wrapcollections before-first
+
+# Disable rules that may conflict with project patterns
+--disable redundantSelf
+--disable wrapMultilineStatementBraces
+
+# Exclude generated/vendored code
+--exclude .build,DerivedData
