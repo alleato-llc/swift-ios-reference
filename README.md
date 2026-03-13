@@ -17,6 +17,17 @@ xcodegen generate
 open RecipePlanner.xcodeproj
 ```
 
+## App Icon
+
+The app icon is generated programmatically from `scripts/generate_icon.py` (Python 3 + Pillow). It runs automatically as a pre-build script, or manually:
+
+```bash
+pip install -r scripts/requirements.txt   # One-time setup
+python3 scripts/generate_icon.py          # Generate 1024x1024 icon
+```
+
+The generated PNG is gitignored — the script is the source of truth.
+
 ## Build & Test
 
 ```bash

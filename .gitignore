@@ -37,6 +37,12 @@ build/
 *.swo
 *~
 
+# Generated app icon (source of truth is scripts/generate_icon.py)
+RecipePlanner/Assets.xcassets/AppIcon.appiconset/icon.png
+
+# Python venv for icon generation
+scripts/.venv/
+
 # Claude Code
 .claude/settings.local.json
 

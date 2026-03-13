@@ -105,6 +105,9 @@ Detailed documentation lives in `docs/`:
 
 Available skills in `.claude/skills/`:
 
+### Build
+- **app-icon** — Programmatic icon generation via Python/Pillow, XcodeGen pre-build integration
+
 ### Production
 - **project-structure** — Modular packages, directory layout, core/subdomain split
 - **component-design** — Views, ViewModels, Repositories, Clients, Calculators
