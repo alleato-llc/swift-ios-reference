@@ -14,13 +14,16 @@ version: 1.0.0
 | `*ViewModel` | Orchestrates business logic for a screen | Yes — repositories, clients | `RecipeListViewModel` |
 | `*Repository` | Data access boundary (protocol or impl) | Yes — ModelContext (impl) | `RecipeRepository` |
 | `*Client` | External service boundary (protocol or impl) | Yes — URLSession, SDK (impl) | `NutritionClient` |
-| `*Calculator` | Standalone logic — pure computation | No — takes inputs, returns outputs | `NutritionCalculator` |
+| `*Calculator` | Standalone logic — pure computation, analysis | No — takes inputs, returns outputs | `NutritionCalculator` |
+| `*Generator` | Standalone logic — produces text/data output | No — takes inputs, returns formatted output | `ReportGenerator` |
+| `*Exporter` | Standalone logic — serializes to a format | No — takes domain types, returns encoded data | `JsonRecipeExporter` |
+| `*Importer` | Standalone logic — deserializes from a format | No — takes encoded data, returns domain types | `JsonRecipeImporter` |
 | `*Presenter` | Centralized UI concern (e.g., error display) | No — holds state for View binding | `ErrorPresenter` |
 | `*Factory` | Test data builders | No — creates test objects | `TestRecipeFactory` |
 
 ### Key rule: `*ViewModel` implies dependencies
 
-A type named `*ViewModel` tells the reader it orchestrates other components — it has constructor-injected dependencies. If a type performs self-contained logic with no dependencies (math, aggregation, formatting), do **not** name it `*ViewModel`. Use a descriptive name that reflects what it does.
+A type named `*ViewModel` tells the reader it orchestrates other components — it has constructor-injected dependencies. If a type performs self-contained logic with no dependencies, choose a suffix that describes its purpose: `*Calculator` for analysis/computation, `*Generator` for producing formatted output, `*Exporter`/`*Importer` for serialization boundaries.
 
 ```swift
 // Bad — NutritionViewModel implies it depends on other components
@@ -103,6 +106,9 @@ TestRecipeRepository.swift        # Test fake
 RecipeListView.swift              # View
 RecipeListViewModel.swift         # ViewModel
 NutritionCalculator.swift         # Calculator
+ReportGenerator.swift             # Generator
+JsonRecipeExporter.swift          # Exporter
+JsonRecipeImporter.swift          # Importer
 ```
 
 ## Model and Enum naming
@@ -123,7 +129,7 @@ enum MealType: String { ... }
 - Production implementations are prefixed by technology (`SwiftData*`, `APIProxy*`)
 - Test fakes are prefixed with `Test`
 - Files are named after their primary type
-- `*ViewModel` implies constructor-injected dependencies — use `*Calculator` for standalone logic
+- `*ViewModel` implies constructor-injected dependencies — standalone logic uses `*Calculator`, `*Generator`, `*Exporter`, or `*Importer`
 
 ## Checklist
 
@@ -133,5 +139,5 @@ When creating or reviewing types, verify:
 - [ ] Protocols use plain domain names without prefixes or suffixes
 - [ ] Implementations use technology prefix (SwiftData*, APIProxy*, Test*)
 - [ ] File name matches the primary type name
-- [ ] `*ViewModel` types actually have dependencies — standalone logic uses descriptive names
+- [ ] `*ViewModel` types actually have dependencies — standalone logic uses `*Calculator`, `*Generator`, `*Exporter`, or `*Importer`
 - [ ] Test factory methods use `make*` prefix
