@@ -1,6 +1,6 @@
 ---
 name: project-structure
-description: Modular packages with domain-oriented organization and 7-file directory limit
+description: Modular Swift package layout for iOS apps — Core (models), Services (protocols + impls), TestSupport (fakes), with the app target on top. One-directional dependency flow and a 7-file-per-directory soft limit. Use when creating a new Swift iOS project, adding a domain area, or restructuring packages.
 version: 1.0.0
 ---
 

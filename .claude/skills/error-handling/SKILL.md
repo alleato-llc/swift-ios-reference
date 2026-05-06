@@ -1,6 +1,6 @@
 ---
 name: error-handling
-description: Error enum with associated values and centralized ErrorPresenter
+description: Error handling patterns for Swift iOS applications. Single error enum with associated values, `@Observable` `ErrorPresenter` driving SwiftUI alert state per ViewModel, do/catch in async methods. Use when adding error types, handling failures in ViewModels, or wiring error alerts in views.
 version: 1.0.0
 ---
 

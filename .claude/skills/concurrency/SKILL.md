@@ -1,6 +1,6 @@
 ---
 name: concurrency
-description: Swift concurrency with async/await and MainActor isolation
+description: Swift structured concurrency rules for iOS apps. `@MainActor` ViewModels and SwiftData repositories, non-isolated network clients and pure logic, `Task {}` for async work — no GCD. Use when adding async work, deciding actor isolation, or reviewing concurrency annotations.
 version: 1.0.0
 ---
 

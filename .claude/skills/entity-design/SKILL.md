@@ -1,6 +1,6 @@
 ---
 name: entity-design
-description: SwiftData @Model entities with enum-as-String and timestamp patterns
+description: Design rules for SwiftData `@Model` entities — non-optional properties with sensible defaults, enum-as-String storage with typed computed accessors, timestamp fields, cascade-rule relationships. Use when creating or modifying SwiftData entities.
 version: 1.0.0
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: persistence
-description: SwiftData @Model entities with ModelContainer and in-memory testing
+description: SwiftData persistence layer for iOS apps using the repository pattern. `@Model` entities in Core, repository implementations in Services backed by `ModelContainer`, in-memory containers for tests. Use when adding persisted entities, implementing a repository, or setting up the SwiftData container.
 version: 1.0.0
 ---
 

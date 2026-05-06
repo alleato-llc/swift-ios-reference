@@ -1,6 +1,6 @@
 ---
 name: view-architecture
-description: Thin SwiftUI views with environment-based DI and navigation patterns
+description: Thin SwiftUI view patterns — views bind to ViewModels via `@Bindable`, no business logic in views, `@Environment` for DI, `NavigationStack` with type-safe `navigationDestination(for:)`. Use when creating SwiftUI views, structuring navigation, or reviewing view/ViewModel separation.
 version: 1.0.0
 ---
 

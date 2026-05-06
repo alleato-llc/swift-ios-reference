@@ -1,6 +1,6 @@
 ---
 name: state-management
-description: Observable ViewModels with State and Environment property wrappers
+description: State management patterns for SwiftUI apps — `@Observable @MainActor` ViewModels own state, views bind via `@Bindable`, dependencies arrive via `@Environment`, `private(set)` for read-only state, computed properties for derived state. Use when designing a ViewModel, adding state to a view, or reviewing state flow.
 version: 1.0.0
 ---
 

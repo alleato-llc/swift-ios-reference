@@ -1,6 +1,6 @@
 ---
 name: adding-unit-tests
-description: Swift Testing for pure logic and ViewModel tests
+description: Adds Swift Testing unit tests for pure logic (Calculators) and ViewModels using test doubles. No XCTest, no SwiftData container — `@Suite`, `@Test`, `#expect`, `#require`. Use when testing stateless calculators, ViewModel behavior, or any logic with no real persistence layer.
 version: 1.0.0
 ---
 

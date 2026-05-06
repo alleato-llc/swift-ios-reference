@@ -2,7 +2,7 @@
 name: app-icon
 version: 1.1.0
 category: Build
-description: Programmatic app icon generation via Python/Pillow, integrated into XcodeGen build
+description: Generates the iOS app icon programmatically via a Python/Pillow script wired into the XcodeGen pre-build phase. The script is the single source of truth; the PNG is a derived artifact regenerated on each build. Use when changing the app icon or wiring icon generation into a new project.
 ---
 
 # App Icon

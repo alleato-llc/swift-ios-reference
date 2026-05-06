@@ -1,6 +1,6 @@
 ---
 name: inversion-of-control
-description: Protocols as contracts with constructor injection via DependencyContainer
+description: Protocols as contract boundaries for repositories and external clients in Swift iOS apps. Constructor injection via a `DependencyContainer` struct; production impls in Services, test fakes in TestSupport. Use when adding external dependencies, defining service boundaries, or wiring DI.
 version: 1.0.0
 ---
 
